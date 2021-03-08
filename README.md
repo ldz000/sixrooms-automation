@@ -1,0 +1,1 @@
+# sixrooms-automation
