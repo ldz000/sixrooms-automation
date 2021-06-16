@@ -10,10 +10,9 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
-
 public class httpClient {
 
-    public String doGet(String url) {
+    public void doGet(String url) {
         CloseableHttpClient httpClient = null;
         CloseableHttpResponse response = null;
         String result = "";
@@ -31,26 +30,23 @@ public class httpClient {
             HttpEntity entity = response.getEntity();
             result = EntityUtils.toString(entity);
             System.out.println(result);
-
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             if (response != null) {
                 try {
                     response.close();
-                } catch (IOException ioe) {
-                    ioe.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
             if (httpClient != null) {
                 try {
                     httpClient.close();
-                } catch (IOException ioe) {
-                    ioe.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
-        return result;
     }
-
 }
