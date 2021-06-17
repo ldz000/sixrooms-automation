@@ -12,6 +12,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import sixrooms.base.ApiService;
@@ -45,6 +46,11 @@ public class PopUpTestXiuChang {
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "cn.v6.sixrooms.ui.phone.SplashActivity");
         driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
         tAction = new TouchAction<>(driver);
+    }
+
+    @AfterTest
+    public void tearDown() {
+        driver.quit();
     }
 
     @Test
