@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="All Test Suite" duration-ms="459259" started-at="2021-06-16T07:57:49Z" finished-at="2021-06-16T08:05:28Z">
+    <groups>
+    </groups>
+    <test name="D:/projects/sixrooms-automation" duration-ms="459259" started-at="2021-06-16T07:57:49Z" finished-at="2021-06-16T08:05:28Z">
+      <class name="sixrooms.cases.shiliu.PopUpTestShiLiu">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="setUp" is-config="true" duration-ms="9393" started-at="2021-06-16T15:57:49Z" finished-at="2021-06-16T15:57:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="initialApi()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="initialApi" duration-ms="132657" started-at="2021-06-16T15:57:58Z" finished-at="2021-06-16T16:00:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialApi -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="tearDown" is-config="true" duration-ms="478" started-at="2021-06-16T16:00:11Z" finished-at="2021-06-16T16:00:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="setUp" is-config="true" duration-ms="6806" started-at="2021-06-16T16:00:11Z" finished-at="2021-06-16T16:00:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="php320_Test()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="php320_Test" duration-ms="91580" started-at="2021-06-16T16:00:18Z" finished-at="2021-06-16T16:01:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- php320_Test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="tearDown" is-config="true" duration-ms="472" started-at="2021-06-16T16:01:50Z" finished-at="2021-06-16T16:01:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="setUp" is-config="true" duration-ms="8446" started-at="2021-06-16T16:01:50Z" finished-at="2021-06-16T16:01:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="php322_Test()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="php322_Test" duration-ms="77516" started-at="2021-06-16T16:01:58Z" finished-at="2021-06-16T16:03:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- php322_Test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="tearDown" is-config="true" duration-ms="434" started-at="2021-06-16T16:03:16Z" finished-at="2021-06-16T16:03:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="setUp" is-config="true" duration-ms="8033" started-at="2021-06-16T16:03:16Z" finished-at="2021-06-16T16:03:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="php323_Test()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="php323_Test" duration-ms="49808" started-at="2021-06-16T16:03:24Z" finished-at="2021-06-16T16:04:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- php323_Test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="tearDown" is-config="true" duration-ms="461" started-at="2021-06-16T16:04:14Z" finished-at="2021-06-16T16:04:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="setUp" is-config="true" duration-ms="7001" started-at="2021-06-16T16:04:15Z" finished-at="2021-06-16T16:04:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="php319Socket()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="php319Socket" duration-ms="65691" started-at="2021-06-16T16:04:22Z" finished-at="2021-06-16T16:05:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- php319Socket -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:sixrooms.cases.shiliu.PopUpTestShiLiu@1a0ffb9b]" name="tearDown" is-config="true" duration-ms="475" started-at="2021-06-16T16:05:27Z" finished-at="2021-06-16T16:05:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- sixrooms.cases.shiliu.PopUpTestShiLiu -->
+    </test> <!-- D:/projects/sixrooms-automation -->
+  </suite> <!-- All Test Suite -->
+</testng-results>

@@ -494,7 +494,7 @@ public class PopUpTestShiLiu {
         capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability(AndroidMobileCapabilityType.RECREATE_CHROME_DRIVER_SESSIONS, true);
-        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "600");
+        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "3000");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "cn.v6.sixrooms");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "cn.v6.sixrooms.ui.phone.SplashActivity");
         return capabilities;

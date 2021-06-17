@@ -42,7 +42,7 @@ public class PopUpTestXiuChang {
         capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability(AndroidMobileCapabilityType.RECREATE_CHROME_DRIVER_SESSIONS, true);
-        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "600");
+        capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "3000");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "cn.v6.xiuchang");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "cn.v6.sixrooms.ui.phone.SplashActivity");
         driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
