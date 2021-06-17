@@ -28,6 +28,7 @@ import java.net.URL;
  */
 
 public class PopUpTestXiuChang {
+
     public static AndroidDriver<?> driver;
     ApiService http = new ApiService();
     TouchAction<?> tAction;
