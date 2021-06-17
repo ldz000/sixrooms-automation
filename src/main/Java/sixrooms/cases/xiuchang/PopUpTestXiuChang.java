@@ -202,7 +202,6 @@ public class PopUpTestXiuChang {
         driver.pressKeyCode(AndroidKeyCode.BACK);
         if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
             throw new RuntimeException("电台房倒数第一创可贴没显示出来");
-        driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
     }
 
     @Test
@@ -264,15 +263,24 @@ public class PopUpTestXiuChang {
             throw new RuntimeException("320socket视频房倒数第一创可贴没显示出来");
         if (waitForElement(By.id("cn.v6.xiuchang:id/second_banner")))
             throw new RuntimeException("320socket视频房倒数第二创可贴不该显示出来");
-        driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
         try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test4&status=0");
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test2&status=2");
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test1&status=2");
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.xiuchang:id/iv_back").click();
-        waitForElement(By.id("cn.v6.xiuchang:id/ivClearKeyWord"));
-        driver.findElement(By.id("cn.v6.xiuchang:id/ivClearKeyWord")).click();
+        try {
+            setUp();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5"));
+        driver.pressKeyCode(AndroidKeyCode.BACK);
+        targetClick(63, 174);
+        waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
+        driver.findElementById("cn.v6.xiuchang:id/search_editText_content").click();
         try {
             Runtime.getRuntime().exec("adb shell input text 786023");
             Thread.sleep(2000);
@@ -284,17 +292,34 @@ public class PopUpTestXiuChang {
         driver.findElementById("cn.v6.xiuchang:id/icon").click();
         if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
             driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
+            throw new RuntimeException("视频房主动弹窗没弹出来");
+        driver.pressKeyCode(AndroidKeyCode.BACK);
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
+            throw new RuntimeException("320socket视频房倒数第一创可贴没显示出来");
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/second_banner")))
+            throw new RuntimeException("320socket视频房倒数第二创可贴没显示出来");
+        Point point3 = driver.findElementById("cn.v6.xiuchang:id/second_banner").getLocation();
+        tAction.press(PointOption.point(point3.x + 10, point3.y + 10)).release().perform();
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
+            throw new RuntimeException("2号创可贴点击没响应");
+        driver.pressKeyCode(AndroidKeyCode.BACK);
         try {
-            Thread.sleep(3000);
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test2&status=0");
+            http.doGet(
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=320&ruid=82354127&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
-            throw new RuntimeException("电台房主动弹窗没弹出来");
-        driver.pressKeyCode(AndroidKeyCode.BACK);
         if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
-            throw new RuntimeException("电台房倒数第一创可贴没显示出来");
-        driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
+            throw new RuntimeException("320socket视频房倒数第一创可贴没显示出来");
+        if (waitForElement(By.id("cn.v6.xiuchang:id/second_banner")))
+            throw new RuntimeException("320socket视频房倒数第二创可贴不该显示出来");
     }
 
     @Test
@@ -338,6 +363,54 @@ public class PopUpTestXiuChang {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(
                     "http://v.6.cn/api/doTestPop.php?act=send&typeid=322&uid=91271306&ruid=86823842&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
+            throw new RuntimeException("322socket房间内弹窗不该弹出来");
+        try {
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test1&status=0");
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=2");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            setUp();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        waitForElement(By.id("cn.v6.xiuchang:id/mainBottomBarButtonImage"));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        targetClick(63, 174);
+        waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
+        driver.findElement(By.id("cn.v6.xiuchang:id/search_editText_content")).click();
+        try {
+            Runtime.getRuntime().exec("adb shell input text 786023");
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
+            throw new RuntimeException("322socket房间内弹窗没弹出来");
+        driver.pressKeyCode(AndroidKeyCode.BACK);
+        driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/cancel"));
+        driver.findElementById("cn.v6.xiuchang:id/cancel").click();
+        try {
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
+            http.doGet(
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=322&uid=91271306&ruid=82354127&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -399,7 +472,56 @@ public class PopUpTestXiuChang {
         }
         if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("321socket通知型弹窗没弹出来");
-
+        try {
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test1&status=0");
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=2");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            setUp();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        waitForElement(By.id("cn.v6.xiuchang:id/mainBottomBarButtonImage"));
+        targetClick(973, 2240);
+        targetClick(106, 2243);//点击首页
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        targetClick(63, 174);
+        waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
+        driver.findElementById("cn.v6.xiuchang:id/search_editText_content").click();
+        try {
+            Runtime.getRuntime().exec("adb shell input text 786023");
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
+            throw new RuntimeException("322socket视频房弹窗没弹出来");
+        driver.pressKeyCode(AndroidKeyCode.BACK);
+        try {
+            http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=2");
+            http.doGet(
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=321&show=1&eventname=test3&uid=91271306&ruid=82354127&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
+            throw new RuntimeException("321socket通知型弹窗没弹出来");
     }
 
     @Test
