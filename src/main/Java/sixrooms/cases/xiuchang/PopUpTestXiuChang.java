@@ -38,6 +38,7 @@ public class PopUpTestXiuChang {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "everything");
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability(AndroidMobileCapabilityType.RECREATE_CHROME_DRIVER_SESSIONS, true);

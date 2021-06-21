@@ -10,7 +10,7 @@
         <module name="sixrooms-automation" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="sixrooms-automation" target="8" />
     </bytecodeTargetLevel>
   </component>

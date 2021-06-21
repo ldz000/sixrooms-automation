@@ -30,6 +30,7 @@ public class popUpTestLianYun {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
         capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
         //capabilities.setCapability("deviceName", "192.168.26.16:5555");
         capabilities.setCapability("autoGrantPermissions", true);
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true); // 不删除手机数据
