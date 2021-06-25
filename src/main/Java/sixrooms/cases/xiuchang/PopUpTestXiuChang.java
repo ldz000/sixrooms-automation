@@ -406,8 +406,8 @@ public class PopUpTestXiuChang {
             throw new RuntimeException("322socket房间内弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
-        waitForElement(By.id("cn.v6.xiuchang:id/cancel"));
-        driver.findElementById("cn.v6.xiuchang:id/cancel").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/radioroom_exit_linearlayout"));
+        driver.findElementById("cn.v6.xiuchang:id/radioroom_exit_linearlayout").click();
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(

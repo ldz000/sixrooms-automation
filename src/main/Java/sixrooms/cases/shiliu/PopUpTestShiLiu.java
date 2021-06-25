@@ -347,8 +347,8 @@ public class PopUpTestShiLiu {
             throw new RuntimeException("322socket电台房间内弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         driver.findElementById("cn.v6.sixrooms:id/iv_close_room").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/cancel"));
-        driver.findElementById("cn.v6.sixrooms:id/cancel").click();
+        waitForElement(By.id("cn.v6.sixrooms:id/radioroom_exit_linearlayout"));
+        driver.findElementById("cn.v6.sixrooms:id/radioroom_exit_linearlayout").click();
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(
