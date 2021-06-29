@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 删除用户的粉丝牌
+ * 删除用户粉丝牌
  */
 
 public class DeleteFansCard {
