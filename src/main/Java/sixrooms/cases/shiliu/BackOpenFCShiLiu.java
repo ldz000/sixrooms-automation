@@ -18,7 +18,7 @@ import java.net.URL;
 import java.time.Duration;
 
 /**
- * 执行case后执行DeleteFansCard
+ * 执行完case后执行DeleteFansCard
  */
 
 public class BackOpenFCShiLiu {
