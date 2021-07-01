@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * 删除用户粉丝牌
  */
 
-public class DeleteFansCard {
+public class DeleteFC {
 
     public static void main(String[] args) throws InterruptedException {
         String driverPath = System.getProperty("user.dir") + "/src/chromedriver.exe";

@@ -15,7 +15,7 @@ import java.util.Set;
  * Date: 2021/6/23 15:29
  */
 
-public class WebViewTest {
+public class NativeToWebView {
 
     public static AndroidDriver<?> driver;
 

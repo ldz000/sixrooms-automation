@@ -21,7 +21,7 @@ import java.time.Duration;
  * 执行完case后执行DeleteFansCard
  */
 
-public class BackOpenFCShiLiu {
+public class OpenFCShiLiu {
 
     public static AndroidDriver<?> driver;
     TouchAction<?> tAction;
