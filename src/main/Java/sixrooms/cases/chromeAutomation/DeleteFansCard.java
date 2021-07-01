@@ -1,4 +1,4 @@
-package sixrooms.cases.chromeAuto;
+package sixrooms.cases.chromeAutomation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
