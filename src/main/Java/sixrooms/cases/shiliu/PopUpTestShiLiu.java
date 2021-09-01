@@ -457,8 +457,7 @@ public class PopUpTestShiLiu {
         targetClick(106, 2243);//点击首页
         if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("319登录弹窗没弹出来");
-        driver.pressKeyCode(AndroidKeyCode.BACK);
-        targetClick(106, 2243);//点击首页
+
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test1&status=0");
             http.doGet(

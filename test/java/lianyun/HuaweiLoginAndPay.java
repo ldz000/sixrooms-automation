@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 import java.net.URL;
 
 @Slf4j
+@Deprecated
 public class HuaweiLoginAndPay {
 
     public static AndroidDriver<?> driver;

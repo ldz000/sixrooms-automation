@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 import java.net.URL;
 
 @Slf4j
+@Deprecated
 public class XiuChangLoginAndPay {
 
     private static AndroidDriver<?> driver;
