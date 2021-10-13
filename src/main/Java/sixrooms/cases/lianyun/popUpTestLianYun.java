@@ -18,6 +18,9 @@ import sixrooms.base.ApiService;
 
 import java.net.URL;
 
+/**
+ * 联运包弹窗系统自动化
+ */
 public class popUpTestLianYun {
 
     public static AndroidDriver<?> driver;

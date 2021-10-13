@@ -18,6 +18,7 @@ import java.net.URL;
 import java.time.Duration;
 
 /**
+ * 移动端使用Appium反复切换后台后开通粉丝牌
  * 执行完case后执行DeleteFansCard
  */
 

@@ -10,7 +10,8 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 删除用户粉丝牌
+ * 使用Selenium
+ * PC端删除用户的粉丝牌
  */
 
 public class DeleteFC {

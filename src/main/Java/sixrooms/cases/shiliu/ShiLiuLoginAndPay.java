@@ -16,6 +16,12 @@ import org.testng.annotations.Test;
 
 import java.net.URL;
 
+/**
+ * 微信8.0（微信版本强制必须更新到8.0以上）以上版本不支持获取微信支付密码的页面
+ * 涉及充值的业务无法自动化
+ */
+
+//@Deprecated
 public class ShiLiuLoginAndPay {
 
     private static AndroidDriver<?> driver;
