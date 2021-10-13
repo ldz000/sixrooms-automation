@@ -1,4 +1,4 @@
-package sixrooms.cases.shiliu;
+package sixrooms.cases.xiuchang;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -24,7 +24,7 @@ import java.net.URL;
  * Date: 2021/8/23 18:35
  */
 
-public class TestPopUpShiLiu {
+public class TestPopUpXiuChang {
 
     public static AndroidDriver<?> driver;
 
@@ -42,7 +42,7 @@ public class TestPopUpShiLiu {
         capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
         capabilities.setCapability(AndroidMobileCapabilityType.RECREATE_CHROME_DRIVER_SESSIONS, true);
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "3000");
-        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "cn.v6.sixrooms");
+        capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "cn.v6.xiuchang");
         capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "cn.v6.sixrooms.ui.phone.SplashActivity");
         driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
         tAction = new TouchAction<>(driver);
@@ -69,28 +69,28 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("首页弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/view_hot_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/view_hot_banner")))
             throw new RuntimeException("首页创可贴没显示出来");
-        Point point = driver.findElementById("cn.v6.sixrooms:id/view_hot_banner").getLocation();
+        Point point = driver.findElementById("cn.v6.xiuchang:id/view_hot_banner").getLocation();
         tAction.press(PointOption.point(point.x + 10, point.y + 10)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("首页创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         SwipeRight(driver);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/view_hot_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/view_hot_banner")))
             throw new RuntimeException("首页创可贴没显示出来");
         targetClick(958, 2018);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("首页创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         SwipeLeft(driver);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/view_hot_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/view_hot_banner")))
             throw new RuntimeException("首页创可贴没显示出来");
         targetClick(958, 2018);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("首页创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         targetClick(65, 173);//点击查找按钮
@@ -100,83 +100,83 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living"))) {
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living"))) {
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
         }
         targetClick(533, 1183);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("视频房主动弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/first_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
             throw new RuntimeException("1号创可贴没显示出来");
-        Point point1 = driver.findElementById("cn.v6.sixrooms:id/first_banner").getLocation();
+        Point point1 = driver.findElementById("cn.v6.xiuchang:id/first_banner").getLocation();
         tAction.press(PointOption.point(point1.x, point1.y)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("1号创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/left_top_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/left_top_banner")))
             throw new RuntimeException("3号创可贴没显示");
-        Point point3 = driver.findElementById("cn.v6.sixrooms:id/left_top_banner").getLocation();
+        Point point3 = driver.findElementById("cn.v6.xiuchang:id/left_top_banner").getLocation();
         tAction.press(PointOption.point(point3.x + 10, point3.y + 10)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("3号创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         //4号创可贴
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/right_top_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/right_top_banner")))
             throw new RuntimeException("4号创可贴没显示");
-        Point point4 = driver.findElementById("cn.v6.sixrooms:id/right_top_banner").getLocation();
+        Point point4 = driver.findElementById("cn.v6.xiuchang:id/right_top_banner").getLocation();
         tAction.press(PointOption.point(point4.x + 10, point4.y + 10)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("4号创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         //5号创可贴
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/bottom_center_2_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/bottom_center_2_banner")))
             throw new RuntimeException("5号创可贴没显示");
-        Point point5 = driver.findElementById("cn.v6.sixrooms:id/bottom_center_2_banner").getLocation();
+        Point point5 = driver.findElementById("cn.v6.xiuchang:id/bottom_center_2_banner").getLocation();
         tAction.press(PointOption.point(point5.x + 10, point5.y + 10)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("5号创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         //6号创可贴
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/bottom_center_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/bottom_center_banner")))
             throw new RuntimeException("6号创可贴没显示");
-        Point point6 = driver.findElementById("cn.v6.sixrooms:id/bottom_center_banner").getLocation();
+        Point point6 = driver.findElementById("cn.v6.xiuchang:id/bottom_center_banner").getLocation();
         tAction.press(PointOption.point(point6.x + 10, point6.y + 10)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("6号创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        driver.findElementById("cn.v6.sixrooms:id/iv_close_room").click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_back").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/ivClearKeyWord"));
-        driver.findElement(By.id("cn.v6.sixrooms:id/ivClearKeyWord")).click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_back").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/ivClearKeyWord"));
+        driver.findElement(By.id("cn.v6.xiuchang:id/ivClearKeyWord")).click();
         try {
             Runtime.getRuntime().exec("adb shell input text 786023");
             Thread.sleep(2000);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("电台房主动弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/first_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
             throw new RuntimeException("电台房倒数第一创可贴没显示出来");
     }
 
@@ -195,7 +195,7 @@ public class TestPopUpShiLiu {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
+        waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
         targetClick(65, 173);//点击查找按钮
         try {
@@ -204,21 +204,21 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("视频房主动弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/first_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
             throw new RuntimeException("320socket视频房倒数第一创可贴没显示出来");
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/second_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/second_banner")))
             throw new RuntimeException("320socket视频房倒数第二创可贴没显示出来");
-        Point point2 = driver.findElementById("cn.v6.sixrooms:id/second_banner").getLocation();
+        Point point2 = driver.findElementById("cn.v6.xiuchang:id/second_banner").getLocation();
         tAction.press(PointOption.point(point2.x + 10, point2.y + 10)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("2号创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         try {
@@ -233,9 +233,9 @@ public class TestPopUpShiLiu {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/first_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
             throw new RuntimeException("320socket视频房倒数第一创可贴没显示出来");
-        if (waitForElement(By.id("cn.v6.sixrooms:id/second_banner")))
+        if (waitForElement(By.id("cn.v6.xiuchang:id/second_banner")))
             throw new RuntimeException("320socket视频房倒数第二创可贴不该显示出来");
 
         try {
@@ -251,7 +251,7 @@ public class TestPopUpShiLiu {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
+        waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
         targetClick(65, 173);//点击查找按钮
         try {
@@ -260,21 +260,21 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("电台房主动弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/first_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
             throw new RuntimeException("320socket电台房倒数第一创可贴没显示出来");
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/second_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/second_banner")))
             throw new RuntimeException("320socket电台房倒数第二创可贴没显示出来");
-        Point point3 = driver.findElementById("cn.v6.sixrooms:id/second_banner").getLocation();
+        Point point3 = driver.findElementById("cn.v6.xiuchang:id/second_banner").getLocation();
         tAction.press(PointOption.point(point3.x + 10, point3.y + 10)).release().perform();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/common_web_view")))
             throw new RuntimeException("2号创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         try {
@@ -289,9 +289,9 @@ public class TestPopUpShiLiu {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/first_banner")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/first_banner")))
             throw new RuntimeException("320socket电台房倒数第一创可贴没显示出来");
-        if (waitForElement(By.id("cn.v6.sixrooms:id/second_banner")))
+        if (waitForElement(By.id("cn.v6.xiuchang:id/second_banner")))
             throw new RuntimeException("320socket电台房倒数第二创可贴不该显示出来");
     }
 
@@ -308,7 +308,7 @@ public class TestPopUpShiLiu {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
+        waitForElement(By.id("cn.v6.xiuchang:id/mainBottomBarButtonImage"));
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -321,15 +321,15 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("322socket视频房间内弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        driver.findElementById("cn.v6.sixrooms:id/iv_close_room").click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(
@@ -337,9 +337,9 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("322socket视频房间内弹窗不该弹出来");
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test1&status=0");
@@ -352,7 +352,7 @@ public class TestPopUpShiLiu {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
+        waitForElement(By.id("cn.v6.xiuchang:id/mainBottomBarButtonImage"));
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -365,17 +365,17 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("322socket电台房间内弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        driver.findElementById("cn.v6.sixrooms:id/iv_close_room").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/radioroom_exit_linearlayout"));
-        driver.findElementById("cn.v6.sixrooms:id/radioroom_exit_linearlayout").click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_close_room").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/radioroom_exit_linearlayout"));
+        driver.findElementById("cn.v6.xiuchang:id/radioroom_exit_linearlayout").click();
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(
@@ -383,9 +383,9 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living")))
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("322socket电台房间内弹窗不该弹出来");
     }
 
@@ -402,7 +402,7 @@ public class TestPopUpShiLiu {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
+        waitForElement(By.id("cn.v6.xiuchang:id/mainBottomBarButtonImage"));
         targetClick(65, 173);
         try {
             Runtime.getRuntime().exec("adb shell input text 232740372");
@@ -410,18 +410,18 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living"))) {
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living"))) {
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
         }
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("322socket视频房弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         try {
@@ -431,7 +431,7 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("321socket通知型弹窗没弹出来");
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test1&status=0");
@@ -444,7 +444,7 @@ public class TestPopUpShiLiu {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
+        waitForElement(By.id("cn.v6.xiuchang:id/mainBottomBarButtonImage"));
         targetClick(65, 173);
         try {
             Runtime.getRuntime().exec("adb shell input text 786023");
@@ -452,18 +452,18 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/icon"));
-        driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (waitForElement(By.id("cn.v6.sixrooms:id/tv_living"))) {
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        driver.findElementById("cn.v6.xiuchang:id/iv_title_serach_cancle").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/icon"));
+        driver.findElementById("cn.v6.xiuchang:id/icon").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/tv_living"))) {
+            driver.findElementById("cn.v6.xiuchang:id/tv_living").click();
         }
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("322socket电台房弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         try {
@@ -473,7 +473,7 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("321socket通知型弹窗没弹出来");
     }
 
@@ -490,11 +490,11 @@ public class TestPopUpShiLiu {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
+        waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
         targetClick(973, 2240);
         targetClick(106, 2243);//点击首页
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("319登录弹窗没弹出来");
 
         try {
@@ -504,49 +504,45 @@ public class TestPopUpShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (!waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
+        if (!waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5")))
             throw new RuntimeException("319通知型弹窗没弹出来");
     }
 
 
     public void login() {
-        waitForElement(By.id("cn.v6.sixrooms:id/tv_agree"));
-        driver.findElementById("cn.v6.sixrooms:id/tv_agree").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
+        waitForElement(By.id("cn.v6.xiuchang:id/tv_agree"));
+        driver.findElementById("cn.v6.xiuchang:id/tv_agree").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        waitForElement(By.id("cn.v6.sixrooms:id/close"));
-        driver.findElementById("cn.v6.sixrooms:id/close").click();
-        targetClick(265,1106);
-        waitForElement(By.id("cn.v6.sixrooms:id/tv_exit_room"));
-        driver.findElementById("cn.v6.sixrooms:id/tv_exit_room").click();
-        driver.pressKeyCode(AndroidKeyCode.BACK);
+        waitForElement(By.id("cn.v6.xiuchang:id/close"));
+        driver.findElementById("cn.v6.xiuchang:id/close").click();
         driver.findElementByXPath("(//android.widget.ImageView[@content-desc=\"石榴直播\"])[6]").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/gotoLogin"));
-        driver.findElementById("cn.v6.sixrooms:id/gotoLogin").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/login"));
+        waitForElement(By.id("cn.v6.xiuchang:id/gotoLogin"));
+        driver.findElementById("cn.v6.xiuchang:id/gotoLogin").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/login"));
         driver.findElementByAndroidUIAutomator("new UiSelector().text(\"账号登录\")").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/et_username"));
-        driver.findElementById("cn.v6.sixrooms:id/et_username").sendKeys("houcp");
-        driver.findElementById("cn.v6.sixrooms:id/et_password").sendKeys("1234qwer");
-        driver.findElementById("cn.v6.sixrooms:id/registerSelectTag").click();
-        driver.findElementById("cn.v6.sixrooms:id/but_login").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/roomId"));
+        waitForElement(By.id("cn.v6.xiuchang:id/et_username"));
+        driver.findElementById("cn.v6.xiuchang:id/et_username").sendKeys("houcp");
+        driver.findElementById("cn.v6.xiuchang:id/et_password").sendKeys("1234qwer");
+        driver.findElementById("cn.v6.xiuchang:id/registerSelectTag").click();
+        driver.findElementById("cn.v6.xiuchang:id/but_login").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/roomId"));
     }
 
     public void replaceUid() {
         targetClick(1001, 136);
-        waitForElement(By.id("cn.v6.sixrooms:id/smallPopupsBtn"));
-        driver.findElementById("cn.v6.sixrooms:id/smallPopupsBtn").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/smallPopupsBtn"));
+        driver.findElementById("cn.v6.xiuchang:id/smallPopupsBtn").click();
         for (int i = 0; i < 12; i++) {
             targetClick(972, 179);
         }
-        waitForElement(By.id("cn.v6.sixrooms:id/btn_modify_uuid"));
-        driver.findElementById("cn.v6.sixrooms:id/btn_modify_uuid").click();
-        waitForElement(By.id("cn.v6.sixrooms:id/tv_agree"));
-        driver.findElementById("cn.v6.sixrooms:id/tv_agree").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/btn_modify_uuid"));
+        driver.findElementById("cn.v6.xiuchang:id/btn_modify_uuid").click();
+        waitForElement(By.id("cn.v6.xiuchang:id/tv_agree"));
+        driver.findElementById("cn.v6.xiuchang:id/tv_agree").click();
         SwipeRight(driver);
-        if (waitForElement(By.id("cn.v6.sixrooms:id/agree"))) {
-            driver.findElementById("cn.v6.sixrooms:id/agree").click();
+        if (waitForElement(By.id("cn.v6.xiuchang:id/agree"))) {
+            driver.findElementById("cn.v6.xiuchang:id/agree").click();
             waitForElement(By.id("com.android.permissioncontroller:id/permission_allow_always_button"));
             driver.findElementById("com.android.permissioncontroller:id/permission_allow_always_button").click();
         }
