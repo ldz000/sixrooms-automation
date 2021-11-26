@@ -17,6 +17,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import sixrooms.base.ApiService;
 
+import javax.annotation.Nullable;
 import java.net.URL;
 
 /**

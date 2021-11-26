@@ -333,7 +333,7 @@ public class TestPopUpShiLiu {
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(
-                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=322&uid=91271306&ruid=86823842&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=322&uid=93049943&ruid=86823842&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -379,7 +379,7 @@ public class TestPopUpShiLiu {
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(
-                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=322&uid=91271306&ruid=82354127&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=322&uid=93049943&ruid=82354127&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -427,7 +427,7 @@ public class TestPopUpShiLiu {
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=2");
             http.doGet(
-                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=321&show=1&eventname=test3&uid=91271306&ruid=86823842&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=321&show=1&eventname=test3&uid=93049943&ruid=86823842&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -469,7 +469,7 @@ public class TestPopUpShiLiu {
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=2");
             http.doGet(
-                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=321&show=1&eventname=test3&uid=91271306&ruid=82354127&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=321&show=1&eventname=test3&uid=93049943&ruid=82354127&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -500,7 +500,7 @@ public class TestPopUpShiLiu {
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test1&status=0");
             http.doGet(
-                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=319&uid=91271306&eventname=test1&show=1&isInitEventPop=1&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
+                    "http://v.6.cn/api/doTestPop.php?act=send&typeid=319&uid=93049943&eventname=test1&show=1&isInitEventPop=1&uuid=655228ca720f1b21dd915421ff209068&from=0&ctype=2&ver=");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -526,7 +526,10 @@ public class TestPopUpShiLiu {
         waitForElement(By.id("cn.v6.sixrooms:id/login"));
         driver.findElementByAndroidUIAutomator("new UiSelector().text(\"账号登录\")").click();
         waitForElement(By.id("cn.v6.sixrooms:id/et_username"));
-        driver.findElementById("cn.v6.sixrooms:id/et_username").sendKeys("houcp");
+
+        driver.findElementById("cn.v6.sixrooms:id/et_username");
+
+        driver.findElementById("cn.v6.sixrooms:id/et_username").sendKeys("zhouh26");
         driver.findElementById("cn.v6.sixrooms:id/et_password").sendKeys("1234qwer");
         driver.findElementById("cn.v6.sixrooms:id/registerSelectTag").click();
         driver.findElementById("cn.v6.sixrooms:id/but_login").click();
