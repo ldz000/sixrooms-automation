@@ -121,7 +121,7 @@ public class PopUpTestXiuChang {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        targetClick(63, 174);
+        targetClick(340, 174);
         try {
             Runtime.getRuntime().exec("adb shell input text 232740372");
             Thread.sleep(2000);
@@ -223,7 +223,7 @@ public class PopUpTestXiuChang {
         }
         waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        targetClick(63, 174);
+        targetClick(340, 174);
         waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
         driver.findElementById("cn.v6.xiuchang:id/search_editText_content").click();
         try {
@@ -280,7 +280,7 @@ public class PopUpTestXiuChang {
         }
         waitForElement(By.id("cn.v6.xiuchang:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        targetClick(63, 174);
+        targetClick(340, 174);
         waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
         driver.findElementById("cn.v6.xiuchang:id/search_editText_content").click();
         try {
@@ -343,7 +343,7 @@ public class PopUpTestXiuChang {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        targetClick(63, 174);
+        targetClick(340, 174);
         waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
         driver.findElement(By.id("cn.v6.xiuchang:id/search_editText_content")).click();
         try {
@@ -389,7 +389,7 @@ public class PopUpTestXiuChang {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        targetClick(63, 174);
+        targetClick(340, 174);
         waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
         driver.findElement(By.id("cn.v6.xiuchang:id/search_editText_content")).click();
         try {
@@ -443,7 +443,7 @@ public class PopUpTestXiuChang {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        targetClick(63, 174);
+        targetClick(340, 174);
         waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
         driver.findElementById("cn.v6.xiuchang:id/search_editText_content").click();
         try {
@@ -493,7 +493,7 @@ public class PopUpTestXiuChang {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        targetClick(63, 174);
+        targetClick(340, 174);
         waitForElement(By.id("cn.v6.xiuchang:id/search_editText_content"));
         driver.findElementById("cn.v6.xiuchang:id/search_editText_content").click();
         try {

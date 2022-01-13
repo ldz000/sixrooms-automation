@@ -510,10 +510,13 @@ public class TestPopUpShiLiu {
 
 
     public void login() {
+        //个人信息保护指引
         waitForElement(By.id("cn.v6.sixrooms:id/tv_agree"));
         driver.findElementById("cn.v6.sixrooms:id/tv_agree").click();
+        targetClick(556,1864);
         waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
+        //设置青少年模式-我知道了
         waitForElement(By.id("cn.v6.sixrooms:id/close"));
         driver.findElementById("cn.v6.sixrooms:id/close").click();
         targetClick(265,1106);

@@ -85,13 +85,14 @@ public class PopUpTestShiLiu {
         if (!driverDao.waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
             throw new RuntimeException("左滑切换Tab后首页创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        driverDao.targetClick(65, 173);//点击查找按钮
+        //driverDao.targetClick(148, 186);//点击查找按钮
+        driverDao.targetClick(148,186);
         try {
             Runtime.getRuntime().exec("adb shell input text 232740372");
             Thread.sleep(2000);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+    }
         driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
         driverDao.waitForElement(By.id("cn.v6.sixrooms:id/icon"));
         driver.findElementById("cn.v6.sixrooms:id/icon").click();
@@ -186,7 +187,7 @@ public class PopUpTestShiLiu {
         setUp();
         driverDao.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        driverDao.targetClick(65, 173);//点击查找按钮
+        driverDao.targetClick(148, 186);//点击查找按钮
         try {
             Runtime.getRuntime().exec("adb shell input text 232740372");
             Thread.sleep(2000);
@@ -238,7 +239,7 @@ public class PopUpTestShiLiu {
         setUp();
         driverDao.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        driverDao.targetClick(65, 173);//点击查找按钮
+        driverDao.targetClick(148, 186);//点击查找按钮
         try {
             Runtime.getRuntime().exec("adb shell input text 786023");
             Thread.sleep(2000);
@@ -295,7 +296,7 @@ public class PopUpTestShiLiu {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driverDao.targetClick(65, 173);
+        driverDao.targetClick(148, 186);
         try {
             Runtime.getRuntime().exec("adb shell input text 232740372");
             Thread.sleep(2000);
@@ -335,7 +336,7 @@ public class PopUpTestShiLiu {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driverDao.targetClick(65, 173);
+        driverDao.targetClick(148, 186);
         try {
             Runtime.getRuntime().exec("adb shell input text 786023");
             Thread.sleep(2000);
@@ -376,7 +377,7 @@ public class PopUpTestShiLiu {
         }
         setUp();
         driverDao.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
-        driverDao.targetClick(65, 173);
+        driverDao.targetClick(148, 186);
         try {
             Runtime.getRuntime().exec("adb shell input text 232740372");
             Thread.sleep(2000);
@@ -414,7 +415,7 @@ public class PopUpTestShiLiu {
         }
         setUp();
         driverDao.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
-        driverDao.targetClick(65, 173);
+        driverDao.targetClick(148, 186);
         try {
             Runtime.getRuntime().exec("adb shell input text 786023");
             Thread.sleep(2000);
