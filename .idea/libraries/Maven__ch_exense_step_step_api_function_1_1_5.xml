@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ch.exense.step:step-api-function:1.1.5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ch/exense/step/step-api-function/1.1.5/step-api-function-1.1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/ch/exense/step/step-api-function/1.1.5/step-api-function-1.1.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/ch/exense/step/step-api-function/1.1.5/step-api-function-1.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

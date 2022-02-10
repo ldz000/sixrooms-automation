@@ -64,11 +64,9 @@ public class ApiService {
         Integer code = response.getStatusLine().getStatusCode();// 响应的状态码
         if (response.getEntity() != null) {
             String body = EntityUtils.toString(response.getEntity(), "utf-8");
-            HttpResult result = new HttpResult(code, body);
-            return result;
+            return new HttpResult(code, body);
         } else {
-            HttpResult result = new HttpResult(code, null);
-            return result;
+            return new HttpResult(code, null);
         }
     }
 }
