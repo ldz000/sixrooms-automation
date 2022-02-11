@@ -22,6 +22,7 @@ import java.net.URL;
  * 2.将设备id改成测试uid；
  * 3.设置中关闭小窗模式；
  */
+@Deprecated
 public class PopUpTestXiuChang {
 
     public static AndroidDriver<?> driver;

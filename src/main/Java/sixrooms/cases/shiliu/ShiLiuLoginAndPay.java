@@ -21,7 +21,7 @@ import java.net.URL;
  * 涉及充值的业务无法自动化
  */
 
-//@Deprecated
+@Deprecated
 public class ShiLiuLoginAndPay {
 
     private static AndroidDriver<?> driver;
