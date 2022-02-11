@@ -12,20 +12,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * Appium中对常用方法的封装
+ * 移动端UI自动化常用方法的封装
  */
 
-public class DriverDao {
+public class DriverUtil {
 
-    WebDriver driver;
-
-    public WebDriver getDriver() {
+    public AndroidDriver<?> getDriver() {
         return driver;
     }
 
-    public void setDriver(WebDriver driver) {
+    public void setDriver(AndroidDriver<?> driver) {
         this.driver = driver;
     }
+
+    AndroidDriver<?> driver;
 
     public TouchAction<?> gettAction() {
         return tAction;
@@ -37,6 +37,9 @@ public class DriverDao {
 
     TouchAction<?> tAction;
 
+    /*
+        元素显示等待方法
+     */
     public boolean waitForElement(final By elementLocator) {
         WebDriverWait w = new WebDriverWait(driver, 25);
         boolean flag = true;
@@ -48,6 +51,9 @@ public class DriverDao {
         return flag;
     }
 
+    /*
+        右滑
+     */
     public void SwipeRight(AndroidDriver<?> driver) {
         Dimension size = driver.manage().window().getSize();
         int height = size.height;
@@ -57,6 +63,9 @@ public class DriverDao {
                 .perform();
     }
 
+    /*
+        左滑
+     */
     public void SwipeLeft(AndroidDriver<?> driver) {
         Dimension size = driver.manage().window().getSize();
         int height = size.height;
@@ -66,9 +75,44 @@ public class DriverDao {
                 .moveTo(PointOption.point(100, height / 2)).release().perform();
     }
 
+    /*
+        使用相对坐标进行点击事件
+     */
     public void targetClick(double x, double y) {
         double x2 = driver.manage().window().getSize().width;
         double y2 = driver.manage().window().getSize().height;
         tAction.press(PointOption.point((int) ((x / (double) 1080) * x2), (int) ((y / (double) 2250) * y2))).release().perform();
+    }
+
+    /*
+        强制等待
+     */
+    public void coerceSleep() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+        点击搜索进入直播间
+     */
+    public void searchToRoom(Integer roomID, String roomName) {
+        //targetClick(148, 186);//点击搜索框 石榴
+        targetClick(350, 180);//点击搜索框 秀场
+        //driver.findElementById("cn.v6.sixrooms:id/tv_content").click();//点击查找元素ID
+        try {
+            Runtime.getRuntime().exec("adb shell input text " + roomID);
+            coerceSleep();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        driver.pressKeyCode(AndroidKeyCode.ENTER);
+        coerceSleep();
+        driver.findElementByAndroidUIAutomator("new UiSelector().text(" + '"' + roomName + '"' + ")").click();
+        //driver.findElementById("cn.v6.sixrooms:id/iv_title_serach_cancle").click();
+        //driverDao.waitForElement(By.id("cn.v6.sixrooms:id/icon"));
+        //driver.findElementById("cn.v6.sixrooms:id/icon").click();
     }
 }
