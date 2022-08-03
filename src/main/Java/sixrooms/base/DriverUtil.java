@@ -6,8 +6,6 @@ import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -44,6 +42,7 @@ public class DriverUtil {
         WebDriverWait w = new WebDriverWait(driver, 25);
         boolean flag = true;
         try {
+            //until 直到某个条件为真才会往下执行，默认超时是10s
             w.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementLocator));
         } catch (Exception e) {
             flag = false;
@@ -99,8 +98,9 @@ public class DriverUtil {
         点击搜索进入直播间
      */
     public void searchToRoom(Integer roomID, String roomName) {
-        //targetClick(148, 186);//点击搜索框 石榴
-        targetClick(350, 180);//点击搜索框 秀场
+        targetClick(516, 117);//点击搜索框 石榴
+        //targetClick(90, 100);//点击搜索框 秀场
+        //targetClick(42,100);//点击搜索框 联运
         //driver.findElementById("cn.v6.sixrooms:id/tv_content").click();//点击查找元素ID
         try {
             Runtime.getRuntime().exec("adb shell input text " + roomID);

@@ -16,6 +16,7 @@ import sixrooms.base.ApiService;
 import sixrooms.base.DriverUtil;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 1.登录用户：houcp 密码：1234qwer；
@@ -35,7 +36,7 @@ public class PopUpTestShiLiu {
     @BeforeMethod
     public void setUp() {
         try {
-            driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), getCapabilities());
+            driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), getCapabilities());
             tAction = new TouchAction<>(driver);
             driverUtil.setDriver(driver);
             driverUtil.settAction(tAction);
@@ -85,12 +86,16 @@ public class PopUpTestShiLiu {
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/view_hot_banner")))
             throw new RuntimeException("左滑切换Tab后首页创可贴没显示出来");
         tAction.press(PointOption.point(point.x + 10, point.y + 10)).release().perform();
+        //隐性等待，查询不到元素会不断刷新DOM
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/common_web_view")))
             throw new RuntimeException("左滑切换Tab后首页创可贴点击没响应");
         driver.pressKeyCode(AndroidKeyCode.BACK);
+        //隐性等待
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driverUtil.searchToRoom(232740372, "鱼一吃次啊");
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living"))) {
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content"))) {
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         }
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("视频房主动弹窗没弹出来");
@@ -153,8 +158,8 @@ public class PopUpTestShiLiu {
         driver.findElementByAndroidUIAutomator("new UiSelector().text(\"一个核桃仁22\")").click();
         //driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/icon"));
         //driver.findElementById("cn.v6.sixrooms:id/icon").click();
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content")))
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         driverUtil.coerceSleep();
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("电台房主动弹窗没弹出来");
@@ -177,8 +182,8 @@ public class PopUpTestShiLiu {
         driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
         driverUtil.searchToRoom(232740372, "鱼一吃次啊");
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content")))
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("视频房主动弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
@@ -215,8 +220,8 @@ public class PopUpTestShiLiu {
         driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
         driverUtil.searchToRoom(786023, "一个核桃仁22");
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content")))
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("电台房主动弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
@@ -252,11 +257,13 @@ public class PopUpTestShiLiu {
             e.printStackTrace();
         }
         setUp();
-        driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
-        driverUtil.coerceSleep();
+        //driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
+        //driverUtil.coerceSleep();
+        driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
+        driver.pressKeyCode(AndroidKeyCode.BACK);
         driverUtil.searchToRoom(232740372, "鱼一吃次啊");
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content")))
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("322socket视频房间内弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
@@ -268,8 +275,8 @@ public class PopUpTestShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content")))
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("322socket视频房间内弹窗不该弹出来");
         try {
@@ -282,14 +289,14 @@ public class PopUpTestShiLiu {
         driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
         driverUtil.coerceSleep();
         driverUtil.searchToRoom(786023, "一个核桃仁22");
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content")))
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("322socket电台房间内弹窗没弹出来");
         driver.pressKeyCode(AndroidKeyCode.BACK);
         driver.findElementById("cn.v6.sixrooms:id/iv_close_room").click();
-        driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/radioroom_exit_linearlayout"));
-        driver.findElementById("cn.v6.sixrooms:id/radioroom_exit_linearlayout").click();
+        driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_quit_room"));
+        driver.findElementById("cn.v6.sixrooms:id/tv_quit_room").click();
         try {
             http.doGet("http://v.6.cn/api/doTestPop.php?act=update&eventname=test3&status=0");
             http.doGet(
@@ -297,8 +304,8 @@ public class PopUpTestShiLiu {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living")))
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content")))
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("322socket电台房间内弹窗不该弹出来");
     }
@@ -312,10 +319,12 @@ public class PopUpTestShiLiu {
             e.printStackTrace();
         }
         setUp();
-        driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
+        //driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
+        driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
+        driver.pressKeyCode(AndroidKeyCode.BACK);
         driverUtil.searchToRoom(232740372, "鱼一吃次啊");
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living"))) {
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content"))) {
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         }
         try {
             Thread.sleep(1000);
@@ -343,8 +352,8 @@ public class PopUpTestShiLiu {
         setUp();
         driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/mainBottomBarButtonImage"));
         driverUtil.searchToRoom(786023, "一个核桃仁22");
-        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/tv_living"))) {
-            driver.findElementById("cn.v6.sixrooms:id/tv_living").click();
+        if (driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/live_content"))) {
+            driver.findElementById("cn.v6.sixrooms:id/live_content").click();
         }
         driverUtil.coerceSleep();
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
@@ -372,8 +381,8 @@ public class PopUpTestShiLiu {
         setUp();
         driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5"));
         driver.pressKeyCode(AndroidKeyCode.BACK);
-        driverUtil.targetClick(973, 2240);
-        driverUtil.targetClick(106, 2243);//点击首页
+        driverUtil.targetClick(27, 422);
+        driverUtil.targetClick(354, 749);//点击首页
         if (!driverUtil.waitForElement(By.id("cn.v6.sixrooms:id/web_view_h5")))
             throw new RuntimeException("319登录弹窗没弹出来");
 
